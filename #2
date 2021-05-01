@@ -7,19 +7,45 @@ class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         adder=ListNode((l1.val+l2.val)%10)
         carry=ListNode((l1.val+l2.val)//10)
-       # print(adder)
+        #print('adder1',adder)
         current_node=adder
-        while l1!=None and l2!=None:
-            adder=ListNode((l1.val+l2.val+carry.val)%10)
-            carry=ListNode((l1.val+l2.val+carry.val)//10)
-            #print('carry:',carry)
-            print('adder:',adder)
+        #while l1!=None and l2!=None:
+        while l1.next and l2.next:
             l1=l1.next
             l2=l2.next 
-            current_node=adder.val
-            print(current_node)
+            #***error :adder=ListNode((l1.val+l2.val+carry.val)%10)
+            current_node.next=ListNode((l1.val+l2.val+carry.val)%10)
+            carry=ListNode((l1.val+l2.val+carry.val)//10)
+            #print('carry:',carry)
+            #print('adder:',adder)
+            
+            current_node=current_node.next #****miss
+            #print(current_node)
+            print('adder:',adder)
+        while l1.next:
+            l1=l1.next
+            
+           
+            current_node.next=ListNode((l1.val+carry.val)%10)
+            carry=ListNode((l1.val+carry.val)//10)
+            #print('carry:',carry)
+            #print('adder:',adder)
+            
+            current_node=current_node.next #****miss
+            #print(current_node)
+            print('adder:',adder)
+        while l2.next:
+            l2=l2.next
+            current_node.next=ListNode((l2.val+carry.val)%10)
+            carry=ListNode((l2.val+carry.val)//10)
+            #print('carry:',carry)
+            #print('adder:',adder)
+            
+            current_node=current_node.next #****miss
+            #print(current_node)
+            print('adder:',adder)
         if carry.val>0:
-            adder=1
           # print(adder)
+            current_node.next=ListNode(val=1)
         return adder
             
