@@ -1,2 +1,2 @@
 # leetcode
-Hope to improve my coding skill and record my coding.
+Here to improve my coding skill and record my coding.
