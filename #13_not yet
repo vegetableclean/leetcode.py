@@ -1,0 +1,20 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        dic={'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
+        #print(list(s))
+        a=list(s)
+        b=list()
+        init=0
+        print('I 的值:',dic['I'])
+        
+        for i in range(len(s)):
+            val=dic[(a[i])]
+            next_val=dic[(a[i+1])]
+            new=a[i]+a[i+1]
+            if val>next_val:
+                print('值比較大')
+            else:
+                print('沒有比較大')
+                b.append(a[i])
+                print('b',b)
+                
