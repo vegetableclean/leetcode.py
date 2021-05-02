@@ -18,6 +18,12 @@ class Solution:
                 sum_num=sum_num+dic[(a[i])]
         print('sum_num',sum_num)
         return sum_num
+#錯誤檢討:
+#少了new=dic[(a[i])]-2*dic[(a[i-1])]  #錯誤卡很久 忘記乘以二
+#for example:
+#MCMXCIV
+#expected=1000+(1000-100)+(100-10)+(5-1)
+#code without*2 =1000+100+(1000-100)+10+(100-10)+1+(5-1)
      
                 
             
