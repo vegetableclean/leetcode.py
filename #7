@@ -1,0 +1,26 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+        a=abs(x)
+        #print(a)
+        new=0
+        neg_thres=pow(2,31)
+        pos_thres=neg_thres-1
+        while a!=0:
+            b=a//10
+            #print(b)
+            c=a%10
+            #print(c)
+            #print(a)
+            new=10*new+c
+            #print(new)
+            a=b
+            #print(pos_thres-1)
+        if x > 0 and new < pos_thres-1:
+            print('正的')
+            return new
+        elif x < 0 and -new > - neg_thres:
+            print('負的')
+            return -new
+        else:
+            return 0
+            
