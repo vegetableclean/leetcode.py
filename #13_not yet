@@ -4,17 +4,21 @@ class Solution:
         #print(list(s))
         a=list(s)
         b=list()
-        init=0
-        print('I 的值:',dic['I'])
+        sum_num=0
+        #print('I 的值:',dic['I'])
         
         for i in range(len(s)):
-            val=dic[(a[i])]
-            next_val=dic[(a[i+1])]
-            new=a[i]+a[i+1]
-            if val>next_val:
+            #print('a[i+1]',a[i+1])
+            if i>0 and dic[(a[i])]>dic[(a[i-1])]:
+                new=dic[(a[i])]-2*dic[(a[i-1])]  #錯誤卡很久 忘記乘以二
+                sum_num=sum_num+new
                 print('值比較大')
             else:
                 print('沒有比較大')
-                b.append(a[i])
-                print('b',b)
+                sum_num=sum_num+dic[(a[i])]
+        print('sum_num',sum_num)
+        return sum_num
+     
                 
+            
+            
