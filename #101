@@ -1,0 +1,16 @@
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        #print(root.left.val)
+        if root is None:
+            return True
+        return  self.issymmetrictree(root.left,root.right)
+    def issymmetrictree(self,leftroot,rightroot):
+        if leftroot is None and rightroot is None:
+            return True
+        if leftroot is None or rightroot is None or leftroot.val!=rightroot.val:
+            return False  #沒有加的條件
+        if leftroot and rightroot:
+            return self.issymmetrictree(leftroot.left,rightroot.right) and self.issymmetrictree(leftroot.right,rightroot.left)
+            
+  #檢討:1.遞迴不熟 2. if else 的條件沒有想清楚
+       
