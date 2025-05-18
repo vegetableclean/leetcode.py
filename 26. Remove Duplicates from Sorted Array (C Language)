@@ -1,0 +1,14 @@
+int removeDuplicates(int* nums, int numsSize) {
+    //if (numsSize == 0) return 0;
+
+    int i = 0; // 指向最後一個唯一元素的位置
+
+    for (int j = 1; j < numsSize; j++) {
+        if (nums[j] != nums[i]) {
+            i++; // 移動 i 到下一個位置
+            nums[i] = nums[j]; // 將新的唯一元素放進去
+        }
+    }
+
+    return i + 1; // 因為 index 是從 0 開始，所以要 +1 得到元素數量
+}
